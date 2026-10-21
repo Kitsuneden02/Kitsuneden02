@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 230" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#38bdf8" />
+    </marker>
+  </defs>
+
+  <!-- Outer Frame -->
+  <rect width="998" height="228" x="1" y="1" rx="12" fill="url(#cardBg)" stroke="#1e293b" stroke-width="1.5" />
+
+  <!-- Header Bar -->
+  <text x="28" y="32" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="600" letter-spacing="1.2">
+    ARCHITECTURE OVERVIEW // UNDERWATER ROV 3D RECONSTRUCTION &amp; MULTI-SENSOR FUSION
+  </text>
+  <line x1="28" y1="44" x2="972" y2="44" stroke="#1e293b" stroke-width="1" />
+
+  <!-- Stage 1: Multi-Rate Sensors -->
+  <g transform="translate(28, 60)">
+    <rect width="205" height="146" rx="8" fill="#111c33" stroke="#1e3a5f" stroke-width="1.2" />
+    <text x="16" y="24" fill="#38bdf8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="700">
+      01. ACOUSTIC &amp; INERTIAL I/O
+    </text>
+    <text x="16" y="48" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600">
+      • Imagenex 831A Sonar
+    </text>
+    <text x="26" y="64" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5">
+      Custom ROS 2 Driver (RS-485)
+    </text>
+    <text x="16" y="88" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600">
+      • DVL + Dual IMUs
+    </text>
+    <text x="26" y="104" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5">
+       Bottom-lock &amp; attitude streams
+    </text>
+    <text x="16" y="128" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600">
+      • Depth / Pressure Sensor
+    </text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="238" y1="133" x2="266" y2="133" stroke="#38bdf8" stroke-width="1.8" marker-end="url(#arrow)" />
+
+  <!-- Stage 2: 3-Tier State Estimation -->
+  <g transform="translate(274, 60)">
+    <rect width="225" height="146" rx="8" fill="#111c33" stroke="#2dd4bf" stroke-width="1.2" stroke-opacity="0.7" />
+    <text x="16" y="24" fill="#2dd4bf" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="700">
+      02. 3-TIER STATE ESTIMATION
+    </text>
+    <text x="16" y="48" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600">
+      • EKF / UKF Sensor Fusion
+    </text>
+    <text x="26" y="64" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5">
+      Asynchronous multi-rate update
+    </text>
+    <text x="16" y="88" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600">
+      • 3-Level Fallback Logic
+    </text>
+    <text x="26" y="104" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5">
+      Handles DVL dropouts in tunnels
+    </text>
+    <text x="16" y="128" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600">
+      • Drift-Bounded Odometry
+    </text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="504" y1="133" x2="532" y2="133" stroke="#38bdf8" stroke-width="1.8" marker-end="url(#arrow)" />
+
+  <!-- Stage 3: 3D Registration -->
+  <g transform="translate(540, 60)">
+    <rect width="210" height="146" rx="8" fill="#111c33" stroke="#1e3a5f" stroke-width="1.2" />
+    <text x="16" y="24" fill="#38bdf8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="700">
+      03. 3D POINT CLOUD MAPPING
+    </text>
+    <text x="16" y="48" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600">
+      • Acoustic Denoising
+    </text>
+    <text x="26" y="64" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5">
+      Multipath &amp; dead-zone filtering
+    </text>
+    <text x="16" y="88" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600">
+      • SE(3) Scan Registration
+    </text>
+    <text x="26" y="104" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5">
+      Open3D / PointCloud2 pipeline
+    </text>
+    <text x="16" y="128" fill="#e2e8f0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600">
+      • Real-Time 3D Mesh / Map
+    </text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <line x1="755" y1="133" x2="783" y2="133" stroke="#38bdf8" stroke-width="1.8" marker-end="url(#arrow)" />
+
+  <!-- Stage 4: Field Validation Metrics -->
+  <g transform="translate(790, 60)">
+    <rect width="182" height="146" rx="8" fill="#0f292a" stroke="#2dd4bf" stroke-width="1.2" />
+    <text x="14" y="24" fill="#2dd4bf" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" font-weight="700">
+      04. FIELD RESULTS
+    </text>
+    <text x="14" y="54" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="700">
+      20x
+    </text>
+    <text x="62" y="53" fill="#cbd5e1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">
+      Profiling density
+    </text>
+    <line x1="14" y1="68" x2="168" y2="68" stroke="#1e3a3a" stroke-width="1" />
+    <text x="14" y="94" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="18" font-weight="700">
+      2 Anomalies
+    </text>
+    <text x="14" y="110" fill="#94a3b8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10">
+      Detected in hydro tunnel
+    </text>
+    <line x1="14" y1="120" x2="168" y2="120" stroke="#1e3a3a" stroke-width="1" />
+    <text x="14" y="138" fill="#2dd4bf" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10.5" font-weight="600">
+      Grade: 7.0 / 7.0 (Max)
+    </text>
+  </g>
+</svg>
