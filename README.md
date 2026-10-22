@@ -31,26 +31,23 @@ My core work bridges **robotics perception, state estimation, and production sof
 
 #### 1. Real-Time 3D Underwater Tunnel Reconstruction via Multi-Sensor Fusion *(Engineering Thesis, Oct 2026)*
 > **Title:** *Algorithms for Point Cloud Fusion and Registration in Underwater Environments Based on Low-Sampling-Rate Acoustic Sensors*  
-> **Institution:** Department of Electrical Engineering, Universidad de Chile · **Grade:** 7.0 / 7.0 (Maximum Distinction)
+> **Institution:** Department of Electrical Engineering, Universidad de Chile · **Grade:** 7.0 / 7.0 (Maximum Distinction)  
+> **Note:** *Full thesis text and industrial workspace are under a standard 5-year academic/industrial confidentiality embargo; public abstract and system architecture are summarized below.*
 
-- **Problem:** Acoustic profiling sonars operate at low sampling rates and suffer from severe multipath reflections in confined hydroelectric tunnels, while Doppler Velocity Logs (DVL) experience frequent bottom-lock dropouts.
-- **Architecture:** Designed and implemented an asynchronous multi-sensor state estimation and 3D registration pipeline fusing a **DVL**, **dual IMUs**, a **barometric depth sensor**, and a mechanical **Imagenex 831A profiling sonar** using **EKF/UKF** filters and **Open3D**.
-- **Key Contribution:** Engineered a **3-tier contingency state estimation architecture** that bounds localization drift during sensor dropouts, achieving a **20x increase in 3D profiling density** and successfully detecting **2 previously unknown structural anomalies** during field deployment at the Renace Hydroelectric Project (Guatemala).
-
-#### 2. `imagenex831a_ros2` · ROS 2 Jazzy Driver for Imagenex 831A Profiling Sonar
-- **Overview:** Standalone **ROS 2 (Jazzy)** package written in Python (`rclpy`) interfacing with the **Imagenex 831A** mechanical profiling sonar over RS-485/Serial (`115200` baud).
-- **Capabilities:** Implements binary command framing (`0xFE 0x44 0x10`) and vectorized byte-stream decoding (`ISX` protocol frames) using NumPy, publishing native `sensor_msgs/PointCloud2` topics with dead-zone filtering, acoustic scaling, and thread-safe runtime parameter reconfiguration (`rqt_reconfigure` support for gain, range, speed of sound, and roll offset).
+- **Problem:** Mechanical profiling sonars operate at low sampling rates (~0.3 Hz at 6 m range) and suffer from helical motion distortion (*motion skew*) and multipath reflections in confined hydroelectric tunnels, while Doppler Velocity Logs (DVL) experience frequent bottom-lock dropouts.
+- **Architecture:** Designed and implemented an asynchronous multi-sensor state estimation and 3D registration pipeline in **ROS 2 Jazzy** and **Gazebo Harmonic**, fusing a **WaterLinked A50 DVL**, **dual IMUs**, a **barometric depth sensor**, and a mechanical **Imagenex 831A profiling sonar** using **EKF/UKF** filters and an 11-stage **Open3D** post-processing pipeline.
+- **Key Contribution:** Engineered a **3-tier contingency state estimation architecture** that bounds localization drift during sensor dropouts and unrolls helical scan distortion, achieving a **20x increase in 3D profiling density** and detecting **2 previously unknown structural anomalies** during field deployment at the Renace Hydroelectric Project (Guatemala).
+- **Custom ROS 2 Driver:** Developed a standalone **ROS 2 Jazzy (`rclpy`)** driver for the **Imagenex 831A** profiling sonar over RS-485/Serial (`115200` baud) with vectorized `sensor_msgs/PointCloud2` publishing and runtime `rqt` parameter reconfiguration.
 
 ---
 
-### Selected Repositories
+### Selected Public Repositories
 
 | Repository | Domain | Tech Stack | Highlights |
 | :--- | :--- | :--- | :--- |
-| **[`el7009_2d_exploration`](https://github.com/Kitsuneden02/el7009_2d_exploration)** | Mobile Robotics & Autonomous Exploration | `Python` `ROS` `2D SLAM` | Frontier-based autonomous exploration in unknown 2D environments developed for EL7009 Mobile Robotics at U. de Chile. |
+| **[`el7009_2d_exploration`](https://github.com/Kitsuneden02/el7009_2d_exploration)** | Mobile Robotics & Autonomous Exploration | `ROS 2 Jazzy` `Python` `Nav2` `slam_toolbox` `Gazebo` | Frontier-based autonomous exploration and 2D SLAM in unknown environments for differential-drive robots. |
 | **[`liquiverde`](https://github.com/Kitsuneden02/liquiverde)** | Full-Stack & Mathematical Optimization | `Python` `FastAPI` `React` `Docker` `Pytest` | Multi-objective knapsack optimization engine and lifecycle sustainability scoring platform with 44 automated tests and Open Food Facts integration. |
 | **[`gia-trainer`](https://github.com/Kitsuneden02/gia-trainer)** | Web Engineering & Cognitive Simulation | `JavaScript` `HTML5` `CSS3` | Open-source cognitive speed and psychometric assessment simulator built with zero-dependency vanilla web technologies. |
-| **`imagenex831a_ros2`** *(Release Pending)* | Underwater Perception & Hardware Drivers | `ROS 2 Jazzy` `Python` `PointCloud2` `PySerial` | Native ROS 2 driver and diagnostic suite for the Imagenex 831A profiling sonar with vectorized `PointCloud2` generation. |
 
 ---
 
@@ -58,7 +55,7 @@ My core work bridges **robotics perception, state estimation, and production sof
 
 | Category | Technologies & Tools |
 | :--- | :--- |
-| **Robotics & Simulation** | ![ROS 2](https://img.shields.io/badge/ROS_2_Jazzy-22314E?style=flat-square&logo=ros&logoColor=white) ![ROS 1](https://img.shields.io/badge/ROS_1-22314E?style=flat-square&logo=ros&logoColor=white) ![Gazebo](https://img.shields.io/badge/Gazebo_Harmonic-FF6600?style=flat-square&logo=gazebo&logoColor=white) ![RViz2](https://img.shields.io/badge/RViz2-1e293b?style=flat-square) |
+| **Robotics & Simulation** | ![ROS 2](https://img.shields.io/badge/ROS_2_Jazzy-22314E?style=flat-square&logo=ros&logoColor=white) ![ROS 1](https://img.shields.io/badge/ROS_1-22314E?style=flat-square&logo=ros&logoColor=white) ![Gazebo](https://img.shields.io/badge/Gazebo_Harmonic-FF6600?style=flat-square&logo=gazebo&logoColor=white) ![Nav2](https://img.shields.io/badge/Nav2_%2F_slam__toolbox-1e293b?style=flat-square) ![RViz2](https://img.shields.io/badge/RViz2-0f172a?style=flat-square) |
 | **Perception & State Estimation** | ![Open3D](https://img.shields.io/badge/Open3D-0f172a?style=flat-square) ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white) ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white) ![EKF / UKF](https://img.shields.io/badge/EKF_%2F_UKF_Sensor_Fusion-0f766e?style=flat-square) ![3D Point Clouds](https://img.shields.io/badge/PointCloud2_%2F_3D_Registration-0369a1?style=flat-square) |
 | **Languages & Frameworks** | ![Python](https://img.shields.io/badge/Python_3.11+-3776AB?style=flat-square&logo=python&logoColor=white) ![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white) ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB) ![PyQt5](https://img.shields.io/badge/PyQt5-41CD52?style=flat-square&logo=qt&logoColor=white) ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=flat-square&logo=sqlalchemy&logoColor=white) |
 | **Systems, Embedded & DevOps** | ![Ubuntu](https://img.shields.io/badge/Ubuntu_24.04_%2F_WSL2-E95420?style=flat-square&logo=ubuntu&logoColor=white) ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white) ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white) ![ESP32](https://img.shields.io/badge/ESP32-E7352C?style=flat-square&logo=espressif&logoColor=white) ![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white) |
