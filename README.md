@@ -2,11 +2,11 @@
 
   # Sebastián Herrera Torres
   **こんにちは！チリ出身のロボティクス・ソフトウェアエンジニア、セバスティアン・エレラです。**  
-  *Electrical Engineer (U. de Chile, Highest Honors) · Software Engineer I @ Grupo Lagos*
+  *Electrical Engineer (U. de Chile) · Software Engineer I @ Grupo Lagos*
 
   [![Email](https://img.shields.io/badge/Email-sebastian.herrera.t%40ug.uchile.cl-0f172a?style=flat-square&logo=gmail&logoColor=38bdf8)](mailto:sebastian.herrera.t@ug.uchile.cl)
   [![Location](https://img.shields.io/badge/Location-Santiago%2C%20Chile-0f172a?style=flat-square&logo=googlemaps&logoColor=2dd4bf)](https://github.com/Kitsuneden02)
-  [![Education](https://img.shields.io/badge/U.%20de%20Chile-Electrical%20Engineering%20(Highest%20Honors)-0f172a?style=flat-square&logo=academia&logoColor=38bdf8)](https://fcfm.uchile.cl/)
+  [![Education](https://img.shields.io/badge/U.%20de%20Chile-Electrical%20Engineering-0f172a?style=flat-square&logo=academia&logoColor=38bdf8)](https://fcfm.uchile.cl/)
   [![Languages](https://img.shields.io/badge/Languages-ES%20(Native)%20%C2%B7%20EN%20(B2%20TOEFL%20597)%20%C2%B7%20JA%20(JLPT%20N5)-0f172a?style=flat-square&logo=translate&logoColor=818cf8)](https://github.com/Kitsuneden02)
 </div>
 
@@ -14,9 +14,9 @@
 
 ### About Me
 
-I am **Sebastián Herrera**, an Electrical Engineer (graduated with **Highest Honors, 6.7/7.0**, and a **7.0/7.0** engineering thesis grade from the **University of Chile**) and Software Engineer based in Santiago, Chile.
+I am **Sebastián Herrera**, an Electrical Engineer from the **University of Chile** and a Software Engineer based in Santiago, Chile.
 
-My core work bridges **robotics perception, state estimation, and production software engineering**. Over the past years, I have designed and deployed multi-sensor fusion pipelines and ROS 2 drivers for underwater remotely operated vehicles (ROVs) in real hydroelectric infrastructure inspections, while also building full-stack software systems.
+My work bridges **robotics perception, state estimation, and software engineering**. Over the past years, I have designed and deployed multi-sensor fusion pipelines and ROS 2 drivers for underwater remotely operated vehicles (ROVs) in hydroelectric infrastructure inspections, while also building full-stack software systems.
 
 - **Current Role:** Software Engineer I at **Grupo Lagos** (full-stack Python/React architecture and mathematical optimization systems).
 - **Previous R&D Experience:** Robotics Software Engineer & Researcher at **Maquintel** (16 months developing ROV software architectures, acoustic 3D mapping pipelines, and field operations in Guatemala).
@@ -24,22 +24,11 @@ My core work bridges **robotics perception, state estimation, and production sof
 
 ---
 
-### Featured Research & Robotics Engineering
-
-#### Real-Time 3D Underwater Tunnel Reconstruction via Multi-Sensor Fusion *(Engineering Thesis, Oct 2026)*
-> **Title:** *Algorithms for Point Cloud Fusion and Registration in Underwater Environments Based on Low-Sampling-Rate Acoustic Sensors*  
-> **Institution:** Department of Electrical Engineering, Universidad de Chile · **Grade:** 7.0 / 7.0 (Maximum Distinction)
-
-- **Architecture:** Asynchronous multi-sensor state estimation and 3D registration pipeline in **ROS 2 Jazzy** and **Gazebo Harmonic**, fusing a **WaterLinked A50 DVL**, **dual IMUs**, a **barometric depth sensor**, and a mechanical **Imagenex 831A profiling sonar** using **EKF/UKF** filters and **Open3D**.
-- **Key Results:** Engineered a **3-tier contingency state estimation architecture** that bounds localization drift during DVL dropouts and corrects helical scan distortion, achieving a **20x increase in 3D profiling density** and detecting **2 previously unknown structural anomalies** during field deployment at the Renace Hydroelectric Project (Guatemala).
-- **Custom ROS 2 Driver:** Developed a standalone **ROS 2 Jazzy (`rclpy`)** driver for the **Imagenex 831A** profiling sonar over RS-485/Serial (`115200` baud) with vectorized `sensor_msgs/PointCloud2` publishing and runtime `rqt` parameter reconfiguration.
-
----
-
 ### Selected Public Repositories
 
 | Repository | Domain | Tech Stack | Highlights |
 | :--- | :--- | :--- | :--- |
+| **[`underwater-3d-sonar-reconstruction`](https://github.com/Kitsuneden02/underwater-3d-sonar-reconstruction)** | Underwater Robotics, Sensor Fusion & 3D Mapping | `ROS 2 Jazzy` `Python` `Open3D` `EKF/UKF` `Gazebo` | Engineering thesis showcase: 15-DOF EKF/UKF state estimation benchmarks, helical sonar motion deskewing, and 3D reconstruction of a 1.8 km hydroelectric tunnel. |
 | **[`el7009_2d_exploration`](https://github.com/Kitsuneden02/el7009_2d_exploration)** | Mobile Robotics & Autonomous Exploration | `ROS 2 Jazzy` `Python` `Nav2` `slam_toolbox` `Gazebo` | Frontier-based autonomous exploration and 2D SLAM in unknown environments for differential-drive robots. |
 | **[`liquiverde`](https://github.com/Kitsuneden02/liquiverde)** | Full-Stack & Mathematical Optimization | `Python` `FastAPI` `React` `Docker` `Pytest` | Multi-objective knapsack optimization engine and lifecycle sustainability scoring platform with 44 automated tests and Open Food Facts integration. |
 | **[`gia-trainer`](https://github.com/Kitsuneden02/gia-trainer)** | Web Engineering & Cognitive Simulation | `JavaScript` `HTML5` `CSS3` | Open-source cognitive speed and psychometric assessment simulator built with zero-dependency vanilla web technologies. |
