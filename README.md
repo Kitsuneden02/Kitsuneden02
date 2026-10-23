@@ -19,7 +19,7 @@ I am **Sebastián Herrera**, an Electrical Civil Engineer from the **University 
 My work focuses on **Python software engineering for ROS and ROS 2 systems, non-linear state estimation (UKF/EKF), multi-sensor fusion, 3D point cloud registration, and Gazebo simulation**. I combine two years in the university's **RoboCup@Home** service robotics team with 16 months of industry experience building asynchronous data pipelines, field telemetry tools, and perception integration nodes for underwater robotic platforms.
 
 - **Industry R&D Experience:** 16 months at **Maquintel Robotic Services** (`12/2024 - 04/2026`), progressing from Software Engineering Intern to part-time Software Engineer and Robotics Software Engineer (Thesis / R&D) for hydroelectric tunnel inspections.
-- **Service Robotics & Teaching:** Former member of **UChile Homebreakers** (RoboCup@Home, `2022 - 2024`), Teaching Assistant (`03/2025 - 07/2026`), and Adjunct Lecturer (`08/2022 - 12/2023`) at the **University of Chile**.
+- **Service Robotics & Teaching:** Former member of **UChile Homebreakers** (RoboCup@Home, `2022 - 2025`), Teaching Assistant (`03/2025 - 07/2026`), and Adjunct Lecturer (`08/2022 - 12/2023`) at the **University of Chile**.
 - **Technical Interests:** Non-linear state estimation, multi-sensor fusion, 3D point cloud processing, autonomous navigation, and spatial computing.
 
 ---
@@ -54,6 +54,6 @@ My work focuses on **Python software engineering for ROS and ROS 2 systems, non-
 | **04/2025 - 11/2025** | **Software Engineer (Part-Time)** · *Maquintel Robotic Services* | Modular telemetry visualization and analysis platform in Python/PyQt5 with synchronized multi-sensor reporting and video feeds. |
 | **12/2024 - 03/2025** | **Software Engineering Intern** · *Maquintel Robotic Services* | Real-time telemetry web dashboards (React/JavaScript) and REST logging endpoints for industrial inspections. |
 | **03/2025 - 07/2026** | **Teaching Assistant (Ayudante)** · *Universidad de Chile (FCFM)* | Courses: *Computational Intelligence Lab*, *Mobile Robotics*, and *Robotics, Sensing and Autonomous Systems*. |
-| **2022 - 2024** | **Robotics Researcher, UChile Homebreakers (RoboCup@Home)** · *U. de Chile* | Migrated *Bender* service robot from ROS Melodic to Noetic (Python); developed perception and SMACH state machines on SoftBank's *Pepper* robot; evaluated ORB-SLAM. |
+| **2022 - 2025** | **Robotics Researcher, UChile Homebreakers (RoboCup@Home)** · *U. de Chile* | Migrated *Bender* service robot from ROS Melodic to Noetic (Python); developed perception and SMACH state machines on SoftBank's *Pepper* robot; evaluated ORB-SLAM. |
 | **08/2022 - 12/2023** | **Adjunct Lecturer (Profesor Auxiliar)** · *Universidad de Chile (FCFM)* | Course: *Duckietown: Applied Robotics and Computer Vision (Linux, Python, ROS)*. |
 | **2018 - 2026** | **Robotics Competitions & STEM Mentorship** | Youth Robotics Coach at *Liceo Abdón Cifuentes* (`03/2022 - 04/2026`). Competitor in **Robo-One (Yokohama, 2023)**, **Open FLL Plan Ceibal (Montevideo, 2019 - 3rd Place in Strategy & Innovation)**, and **World Robot Summit (Tokyo, 2018)**. |
